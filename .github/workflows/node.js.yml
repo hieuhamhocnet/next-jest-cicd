@@ -20,6 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: 🔍 Kiểm tra thư mục
+        run: |
+          pwd
+          ls -la
+          ls -la ./examples
+          ls -la ./examples/with-jest
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -28,13 +35,14 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: examples/with-jest
+        working-directory: ./examples/with-jest
 
       - name: Build project
         run: npm run build --if-present
-        working-directory: examples/with-jest
+        working-directory: ./examples/with-jest
 
       - name: Run tests
         run: npm test --if-present
-        working-directory: examples/with-jest
+        working-directory: ./examples/with-jest
+
 
