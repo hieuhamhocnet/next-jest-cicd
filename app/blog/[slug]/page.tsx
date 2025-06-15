@@ -1,18 +1,19 @@
 import { Metadata } from 'next';
 
-type Props = {
+// ⚠️ Đổi tên từ Props → PageProps
+type PageProps = {
   params: {
     slug: string;
   };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   return {
     title: `Post: ${params.slug}`,
   };
 }
 
-export default function Page({ params }: Props) {
+export default function Page({ params }: PageProps) {
   return (
     <>
       <h1>Slug: {params.slug}</h1>
