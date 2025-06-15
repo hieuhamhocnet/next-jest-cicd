@@ -17,8 +17,8 @@ export default function Page({ params }: PageProps) {
   return (
     <>
       <h1>Slug: {params.slug}</h1>
-      <p>Training GitHubActions</p>
-      <p>Welcome to GitHubActions</p>
+      <p>Training GitHub Actions</p>
+      <p>Welcome to GitHub Actions</p>
     </>
   );
 }
