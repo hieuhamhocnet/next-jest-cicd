@@ -1,24 +1,19 @@
-import { Metadata } from 'next';
-
-// ⚠️ Đổi tên từ Props → PageProps
-type PageProps = {
-  params: {
-    slug: string;
-  };
+type Params = {
+  slug: string;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }) {
   return {
     title: `Post: ${params.slug}`,
   };
 }
 
-export default function Page({ params }: PageProps) {
+export default function Page({ params }: { params: Params }) {
   return (
     <>
       <h1>Slug: {params.slug}</h1>
       <p>Training GitHubActions</p>
-      <p>Welcome to GitHubActions</p>
+      <p>Welcome to GitHubAction</p>
     </>
   );
 }
