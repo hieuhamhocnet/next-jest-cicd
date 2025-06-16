@@ -1,13 +1,29 @@
+import { Metadata } from 'next';
+
 type Params = {
-  params: {
-    slug: string;
-  };
+  slug: string;
 };
 
-export async function generateMetadata({ params }: Params) {
-  return { title: `Post: ${params.slug}` };
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
+  return {
+    title: `Post: ${params.slug}`,
+  };
 }
 
-export default function Page({ params }: Params) {
-  return <><h1>Slug: {params.slug}</h1><p>TrainingGitHubActions</p></>;
+export default function Page({
+  params,
+}: {
+  params: Params;
+}) {
+  return (
+    <>
+      <h1>Slug: {params.slug}</h1>
+      <p>Training GitHubActions</p>
+      <p>Welcome to GitHubAction</p>
+    </>
+  );
 }
