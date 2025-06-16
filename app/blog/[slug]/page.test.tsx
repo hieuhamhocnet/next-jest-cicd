@@ -12,5 +12,5 @@ it("App Router: Works with dynamic route segments", () => {
 
 it('TrainingGitHubActions in document', () => {
   render(<Page params={{ slug: "Test" }} />);
-  expect(screen.getByText("TrainingGitHubActions")).toBeInTheDocument();
+  expect(screen.getByText("Training GitHubActions")).toBeInTheDocument();
 });
